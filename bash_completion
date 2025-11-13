@@ -1,0 +1,22 @@
+# Bash completion for sd helper
+_sd_complete() {
+    local cur prev
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    # Define your services here
+    local services="bybit_1m_usd bybit_1m_usdt bybit_1m_mc mytest_crasher"
+
+    case "$prev" in
+        monit|start|stop|restart)
+            COMPREPLY=( $(compgen -W "${services}" -- "$cur") )
+            return 0
+            ;;
+        *)
+            COMPREPLY=( $(compgen -W "status monit start stop restart" -- "$cur") )
+            return 0
+            ;;
+    esac
+}
+complete -F _sd_complete sd2
