@@ -1,0 +1,17 @@
+[Unit]
+Description=Description for this script
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /path/to/project/folder/script_name.py
+Restart=always
+RestartSec=5
+WatchdogSec=16
+NotifyAccess=all
+StandardOutput=journal
+StandardError=journal
+CPUQuota=50%
+MemoryMax=1G
+
+[Install]
+WantedBy=multi-user.target
