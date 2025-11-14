@@ -20,8 +20,8 @@ print(f"msg", flush=True)
 ```
 
 install module(s) system wide:\
-`sudo /usr/bin/python3 -m pip install sdnotify`
-
+`sudo /usr/bin/python3 -m pip install sdnotify`  
+`sudo /usr/bin/python3 -m pip install redis`
 
 ## 2) Enable system reboot startup:
 `sudo systemctl enable script_name.service`
