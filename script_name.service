@@ -3,6 +3,7 @@ Description=Description for this script
 After=network.target
 
 [Service]
+WorkingDirectory=/path/to/project/folder
 ExecStart=/usr/bin/python3 /path/to/project/folder/script_name.py
 Restart=always
 RestartSec=5
