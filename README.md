@@ -6,7 +6,7 @@ For running .py scripts with systemd fail-proof, with shortcuts like in pm2
 
 `nano /etc/systemd/system/my_scriptname.service`
 
-fill and customize from: https://github.com/normas/systemd_automation/blob/main/etc_systemd_system_script_name.service
+fill and customize from: https://github.com/normas/systemd_automation/blob/main/script_name.service
 
 script_name.py should contain:
 
