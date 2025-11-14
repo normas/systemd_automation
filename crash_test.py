@@ -16,11 +16,11 @@ def get_config():
     with open("collector_config.yaml") as f:
         config = yaml.safe_load(f)
 
-    return config["collectors"][args.config]
+    # merge two dicts with shared_params and this collector params
+    return config["collectors"][args.config] | config["collectors"]["shared_params"]
 
-# use: config['mongo_uri'], config['redis_uri'], config['log_file'] ...
 config = get_config()
-#print(f"config data: {config.test_param1}")
+#print(f"config data: {config['common_code']} {config['pair']}")
 
 
 
