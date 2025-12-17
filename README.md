@@ -8,7 +8,6 @@ For running .py scripts with systemd fail-proof, with shortcuts like in pm2
 
 fill and customize from: [script_name.service](https://github.com/normas/systemd_automation/blob/main/script_name.service)
 
-python3 -m pip install pytest sdnotify
 script_name.py should contain sdnotify watchdog signaling and be able to read its local yaml config file: [crash_test.py](https://github.com/normas/systemd_automation/blob/main/crash_test.py)
 
 
