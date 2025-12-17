@@ -4,7 +4,9 @@ After=network.target
 
 [Service]
 Type=notify
-WorkingDirectory=/path/to/project/folder
+User=username
+Group=username
+WorkingDirectory=/home/username/project/folder
 ExecStart=/usr/bin/python3 /path/to/project/folder/script_name.py
 # ExecStart=/usr/bin/python3 -m module.path.script_name
 Restart=always
