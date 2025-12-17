@@ -25,6 +25,7 @@ config = get_config()
 
 
 sd_notify = sdnotify.SystemdNotifier()
+sd_notify.notify("READY=1")    # send this as start of the script!
 
 def Test_ErrorCrash():
     for i in range(1,60):
