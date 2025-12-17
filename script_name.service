@@ -3,12 +3,14 @@ Description=Description for this script
 After=network.target
 
 [Service]
+Type=notify
 WorkingDirectory=/path/to/project/folder
 ExecStart=/usr/bin/python3 /path/to/project/folder/script_name.py
+# ExecStart=/usr/bin/python3 -m module.path.script_name
 Restart=always
 RestartSec=5
-WatchdogSec=16
-NotifyAccess=all
+WatchdogSec=80 # sd_notify.notify("WATCHDOG=1") at least once per 40s
+#NotifyAccess=all
 StandardOutput=journal
 StandardError=journal
 CPUQuota=50%
